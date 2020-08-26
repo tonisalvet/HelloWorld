@@ -4,20 +4,41 @@ public class Lesson2 {
 
     public static void main(String[] args) {
         exercise1();
-        exercise2(4);
-        exercise3(2, 5);
-        fibonacci(5);
+        exercise2(5);
+        exercise3(3, 3);
+        fibonacci(10);
         exercise5();
     }
 
     public static void exercise1() {
         // TODO loo 10 elemendile täisarvude massiv
+       /* int[] a;
+        a = new int[10];
         // TODO loe sisse konsoolist 10 täisarvu
+       Scanner scanner = new Scanner(System.in);
+        System.out.println("Sisesta 10 arvu");
+        for (int i = 9; i >= 0; i--) {
+            int n = scanner.nextInt();
+            a[i] = n;
+            System.out.println(i);
+        }
+        */
         // TODO trüki arvud välja vastupidises järiekorras
+
     }
 
     public static void exercise2(int x) {
         // TODO prindi välja x esimest paaris arvu
+        System.out.println("Paaris arvud");
+        for (int i = 0; i < x * 2; i++) {
+            if (i % 2 == 0) {
+                System.out.println(i + " ");
+            }
+        }
+        /* for (int i = 1; i <=x; i++) {
+        system.out.print(i + " ");
+        }
+         */
         // Näide:
         // Sisend 5
         // Väljund 2 4 6 8 10
@@ -25,15 +46,33 @@ public class Lesson2 {
 
     public static void exercise3(int x, int y) {
         // TODO trüki välja korrutustabel mis on x ühikut lai ja y ühikut kõrge
-        // TODO näiteks x = 3 y = 3
-        // TODO väljund
-        // 1 2 3
-        // 2 4 6
-        // 3 6 9
+        for (int i = 1; i <= x; i++) {
+            System.out.println("");
+            for (int j = 1; j <= y; j++) {
+                System.out.print(i * j + " ");
+
+            }
+
+
+            // TODO näiteks x = 3 y = 3
+            // TODO väljund
+            // 1 2 3
+            // 2 4 6
+            // 3 6 9
+        }
     }
 
     public static int fibonacci(int n) {
         // TODO
+        System.out.println(" ");
+        int t1 = 0, t2 = 1;
+        for (int i = 0; i <= n; i++) {
+            System.out.println(t1 + " ");
+            int sum = t1 + t2;
+            t1 = t2;
+            t2 = sum;
+        }
+
         // Fibonacci jada on fib(n) = fib(n-1) + fib(n-2);
         // 0, 1, 1, 2, 3, 5, 8, 13, 21
         // Tagasta fibonacci jada n element
@@ -59,6 +98,8 @@ public class Lesson2 {
         BigDecimal b = new BigDecimal("394486820345");
         BigDecimal c = new BigDecimal("15");
         BigDecimal d = new BigDecimal("4");
+        BigDecimal b1 = b.divide(c);
+        System.out.println(b1);
     }
 
     public static void exercise8() {

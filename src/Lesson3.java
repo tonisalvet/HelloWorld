@@ -3,7 +3,11 @@ import java.util.Arrays;
 public class Lesson3 {
 
     public static void main(String[] args) {
-        System.out.println(alg(8));
+        System.out.println(viimaneveerand(1, 100));
+
+        System.out.println(funct(22));
+
+        System.out.println(alg(5));
 
         System.out.println(sum(389, 694));
 
@@ -15,8 +19,35 @@ public class Lesson3 {
         int[] a = {6, 5, 8, 14};
         System.out.println(Arrays.toString(sort(a)));
 
+        System.out.println(reverseString("hej"));
+
         System.out.println(isPrime(6));
 
+    }
+
+    public static int viimaneveerand(int r, int q) {
+        //tsükkel, mis käib r-st q-ni. r+1, r+1 kuni qni
+        //tsükklik kutsun välja eelmist funktisooni
+        //leian kõige suurem numbri
+        int max = 0;
+        for (int i = r; i <= q; i++) {
+            int tmp = funct(i);
+            if (tmp > max) {
+                max = tmp;
+            }
+
+        }
+        return max;
+    }
+
+    public static int funct(int t) {
+        int u = 1;
+        while (t > 1) { // kas t on suurem kui 1, jah, siis läheb edasi
+            t = alg(t); //läheb otsib alg() mis väärtus tuleb
+            u = u + 1;
+        }
+
+        return u;
     }
 
     private static int alg(int n) {
@@ -77,24 +108,20 @@ public class Lesson3 {
         return a;
     }
 
+
     public static String reverseString(String a) {
         // TODO tagasta string tagurpidi
         // Näiteks:
         // a = "Test";
         // return tseT";
 
-/*
+        String reverse = a;
 
-        String output = "kuulilennuteetunneliluup";
-        int input;
-
-        for (int i = input.length() - 1; i >= 0; i--) {
-            output = output + input.charAt(i);
+        for (int i = a.length() - 1; i >= 0; i--) {
+            reverse = reverse + a.charAt(i);
         }
-        return "";
+        return reverse;
     }
-
-*/
 
     public static boolean isPrime(int x) {
 
